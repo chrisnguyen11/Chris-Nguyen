@@ -1,1 +1,0 @@
-chrisnguyen$ python /Users/chrisnguyen/Desktop/Wheeler_Lab/convert_plink_to_dosage.py --bfile TOPMED_proteome_ALL --plink-binary /Users/chrisnguyen/Desktop/Wheeler_Lab/plink --out TOPMED_proteome_ALL
