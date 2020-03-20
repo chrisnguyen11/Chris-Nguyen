@@ -1,0 +1,1 @@
+./01MissingnessFiltering -b ~/Data/examplebfile -a --geno 0.001 --hwe 0.001
