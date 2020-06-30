@@ -26,4 +26,23 @@ ENSG00000187961 0.0324062705039978      -0.0785085707902908     0.12397265434265
 ```
 ## Building the Baseline Elastic Net Models
 ### Output Files
+covariances files -
+```
+GENE RSID1 RSID2 VALUE
+ENSG00000188976 chr1:1193141 chr1:1193141 0.378501719487062
+ENSG00000188976 chr1:1193141 chr1:1194826 0.37932820982495
+```
+model summaries - 
+```
+gene_id	gene_name	gene_type	alpha	n_snps_in_window	n_snps_in_model	lambda_min_mse	... 
+ENSG00000188976	NOC2L	protein_coding	0.5	245	4	0.0605918843050675	...
+ENSG00000187961	KLHL17	protein_coding	0.5	245	5	0.060013935237177	...
+```
+weights - 
+```
+gene_id	rsid	varID	ref	alt	beta
+ENSG00000188976	chr1:1193141	1_1193141_C_T_b38	C	T	0.00206112053734138
+ENSG00000188976	chr1:1194826	1_1194826_G_A_b38	G	A	0.0255065432819892
+```
 ### Plotting the Rho Averages
+One method for verifying if the models were built correctly is to plot the rho averages from the models summaries. For each tissue type in population, plot the rho averages and look at the shape of the frequencies of the rho averages. 
