@@ -46,4 +46,4 @@ ENSG00000188976	chr1:1194826	1_1194826_G_A_b38	G	A	0.0255065432819892
 ```
 ### Plotting the Rho Averages
 One method for verifying if the models were built correctly is to plot the rho averages from the models summaries. For each tissue type in population, plot the rho averages and look at the shape of the frequencies of the rho averages. 
-![image](https://user-images.githubusercontent.com/60017139/86181745-3ad44d80-baf4-11ea-9ee8-768ac49326f2.png)
+![image](https://user-images.githubusercontent.com/60017139/86181967-9b638a80-baf4-11ea-8b88-5c2aaa232115.png)
