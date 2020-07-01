@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pop=CAU
+
+for tiss in PBMC Mono Tcell
+do
+	dir=/home/chris/topmed/expression/"$pop"/"$tiss"/dosages/
+
+	for i in {1..22}
+	do
+		sed '1d' "$dir"hg38.chr"$i".maf0.01.R20.8.dosage.txt > "$dir"prediXcan_input_hg38.chr"$i".maf0.01.R20.8.dosage.txt
+		gzip "$dir"prediXcan_input_hg38.chr"$i".maf0.01.R20.8.dosage.txt
+	done
+done

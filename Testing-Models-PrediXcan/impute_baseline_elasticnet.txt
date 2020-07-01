@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -N PrediXcan_METS_MESA
+#PBS -S /bin/bash
+#PBS -o /home/chris/logs/impute_expression_analysis/${PBS_JOBNAME}.o${PBS_JOBID}.log
+#PBS -e /home/chris/logs/impute_expression_analysis/${PBS_JOBNAME}.e${PBS_JOBID}.err
+#PBS -l walltime=150:00:00
+#PBS -l mem=16gb
+
+if [ ! -e /home/chris/topmed/expression/baseline_elasticnet/imputed_results/${tiss}/ ]
+then
+	mkdir -p /home/chris/topmed/expression/baseline_elasticnet/imputed_results/${tiss}/
+fi
+
+/usr/local/bin/MetaXcan_software/PrediXcan.py \
+--throw \
+--text_genotypes /home/ryan/topmed/expression/${p}/${tiss}/dosages/prediXcan_input_hg38.chr*.maf0.01.R20.8.dosage.txt.gz \
+--text_sample_ids /home/chris/topmed/expression/${p}/${tiss}/prediXcan_samples.txt \
+--model_db_path /home/chris/topmed/expression/${p2}/${tiss}/dbs/${tiss}_${p2}_WG_noNA_unfiltered.db \
+--prediction_output /home/chris/topmed/expression/baseline_elasticnet/imputed_results/${tiss}/${tiss}_${p2}_unfiltered_model_${p}_geno_predicted_expression.txt \
+--prediction_summary_output /home/chris/topmed/expression/baseline_elasticnet/imputed_results/${tiss}/${tiss}_${p2}_unfiltered_model_${p}_geno_prediction_summary.txt
+
+echo /home/chris/topmed/expression/baseline_elasticnet/imputed_results/${tiss}/${tiss}_${p2}_unfiltered_model_${p}_geno_predicted_expression.txt
+echo /home/chris/topmed/expression/baseline_elasticnet/imputed_results/${tiss}/${tiss}_${p2}_unfiltered_model_${p}_geno_prediction_summary.txt
