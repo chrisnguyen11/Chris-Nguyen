@@ -34,9 +34,9 @@ The Geuvadis genotype files are in the zipped vcf format (vcf.gz), and the expre
 ```  
 - d. Using this list we are able to go back to the genotype files and create new vcf files with samples who also have expression data. Similar to the scripts: 
 
-    - vcf_annotations.txt - writes the header portion of the vcf file to the new vcf file 
+    - **vcf_annotations.txt** - writes the header portion of the vcf file to the new vcf file 
 
-    - vcf_pull_RNA_samples.txt - writes the genotype data portion of the vcf file to the new vcf file 
+    - **vcf_pull_RNA_samples.txt** - writes the genotype data portion of the vcf file to the new vcf file 
 
 #### 3. To get the samples seperated by populations, Ryan had a file that contained the sample and their population:
 ```
@@ -55,7 +55,15 @@ The Geuvadis genotype files are in the zipped vcf format (vcf.gz), and the expre
 - b. Then the individual population list were used to create new vcf files with samples who also have population data.
     - This was repeated for all the populations: ALL, CEU, FIN, GBR, TIS, YRI
 #### 4. With the new vcf files, we need to caululate the minor allele frequency (MAF) and filter by 0.01 MAF.
+- a. Recalculating MAF - based on the command:
+```
+bcftools +fill-tags ~file~ -- -t MAF
+```
 
+- b. Filtering by 0.01 MAF
+```
+bcftools view -q 0.01:minor ~file~
+```
 # Running GWAS-QC
 To run GWAS-QC, I used [Ryan's pipline](https://github.com/RyanSchu/gwasqc_pipeline).
 The first part of the QC is running 
