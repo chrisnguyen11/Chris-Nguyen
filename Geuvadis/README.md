@@ -1,7 +1,7 @@
-## Preparing Files 
+# Preparing Files 
 The Geuvadis genotype files are in the zipped vcf format (vcf.gz), and the expression files are in the zipped gct format (gct.gz). 
-1. We need to unzip the genotype files to allow for ease of use.
-2. We will only be using the samples with avalible expression. 
+#### 1. We need to unzip the genotype files to allow for ease of use.
+#### 2. We will only be using the samples with avalible expression. 
 - a. The expression files are named by the samples so we pulled all the names of the files and thus the samples with expression. 
 ```
   ls > temp
@@ -38,7 +38,7 @@ The Geuvadis genotype files are in the zipped vcf format (vcf.gz), and the expre
 
     - vcf_pull_RNA_samples.txt - writes the genotype data portion of the vcf file to the new vcf file 
 
-3. To get the samples seperated by populations, Ryan had a file that contained the sample and their population:
+#### 3. To get the samples seperated by populations, Ryan had a file that contained the sample and their population:
 ```
   HG00096	GBR
   HG00097	GBR
@@ -54,9 +54,9 @@ The Geuvadis genotype files are in the zipped vcf format (vcf.gz), and the expre
 ```      
 - b. Then the individual population list were used to create new vcf files with samples who also have population data.
     - This was repeated for all the populations: ALL, CEU, FIN, GBR, TIS, YRI
-4. With the new vcf files, we need to caululate the minor allele frequency (MAF) and filter by 0.01 MAF.
+#### 4. With the new vcf files, we need to caululate the minor allele frequency (MAF) and filter by 0.01 MAF.
 
-## Running GWAS-QC
+# Running GWAS-QC
 To run GWAS-QC, I used [Ryan's pipline](https://github.com/RyanSchu/gwasqc_pipeline).
 The first part of the QC is running 
 
@@ -69,4 +69,4 @@ The first part of the QC is running
 ~/gwasqc/03MergeHapMap_TOPMED.txt -b ~/geuvadis/vcf/QC/relatedness_steps/05without_relateds -h ~/HAPMAP3/hg38/hg38_topmed/ -o ~/geuvadis/vcf/QC/ --maf 0.01
 
 
-## Making Dosages
+# Making Dosages
