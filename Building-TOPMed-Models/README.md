@@ -1,4 +1,4 @@
-## Files/Scrips 
+## Files/Scripts 
 - **01a_EN_baseline.R** - contains all functions to run the Baseline Elastic Net linear regressions. 
 - **01b_intermediate.R** - contains all the file paths needed to run the 01a_EN_baseline.R script. Any adjustments needed to run the scripts are most likely to the file paths. 
 - **01c_qsub.txt** - run the script using qsub
