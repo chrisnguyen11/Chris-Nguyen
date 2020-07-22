@@ -5,3 +5,4 @@
   > * tiss - refers to the tissue type being tested in, refer to cross-tissue when the populations are in different tissue types 
 - **qsub_loop.txt** - script that queues multiple jobs of PrediXcan
 - **genetic_pi1.R** - script that 
+## Refer to the [wiki](https://github.com/chrisnguyen11/TOPMed-Expression/wiki/00-Testing-Models-(Running-PrediXcan)) for more detail and how to use! 
