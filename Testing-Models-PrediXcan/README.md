@@ -5,6 +5,7 @@
   > * tiss - refers to the tissue type being tested in, refer to cross-tissue when the populations are in different tissue types 
 - **qsub_loop.txt** - script that queues multiple jobs of PrediXcan
   > * contains list of populations to be looped through
+  > * Use qsub_loop_cross_tissue.txt - if different tissues or when p and p2 populations do not overlap
 - **genetic_pi1.R** - script that calculates the Spearmen correlation between predicted and actual expression
   > * NOTE: make the file pi1 - the script will not make the pi1 file if directory does not exist
 - **prediXcan_input_from_dosages.txt** - script that takes in dosage file, removes the header, and zips the new prediXcan specific dosage file 
