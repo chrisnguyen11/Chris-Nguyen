@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -o /home/chris/logs/${PBS_JOBNAME}.o${PBS_JOBID}.log
+#PBS -e /home/chris/logs/${PBS_JOBNAME}.e${PBS_JOBID}.err
+#PBS -l walltime=150:00:00
+#PBS -l mem=16gb
+
+for tiss in PBMC
+do
+	for pop2 in CHN AFA ALL CAU HIS
+	do
+		for pop in CHN AFA HIS
+		do
+				qsub -v p=${pop},p2=${pop2},tiss=${tiss} -N ${tiss}_${pop2}_model_${pop}_imputationPX impute_baseline_elasticnet.txt
+		done
+	done
+done
