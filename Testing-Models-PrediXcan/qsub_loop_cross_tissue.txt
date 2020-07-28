@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -o /home/chris/logs/${PBS_JOBNAME}.o${PBS_JOBID}.log
+#PBS -e /home/chris/logs/${PBS_JOBNAME}.e${PBS_JOBID}.err
+#PBS -l walltime=150:00:00
+#PBS -l mem=16gb
+
+for pop2_tiss in Tcell
+do
+	for pop2 in AFA ALL CAU HIS
+	do
+		for pop_tiss in Mono
+		do
+			for pop in AFA ALL CAU HIS
+			do
+				qsub -v p=${pop},p2=${pop2},p_tiss=${pop_tiss},p2_tiss=${pop2_tiss} -N ${pop2_tiss}_${pop2}_model_${pop_tiss}_${pop}_imputationPX impute_baseline_elasticnet_cross_tissue.txt
+			done
+		done
+	done
+done
