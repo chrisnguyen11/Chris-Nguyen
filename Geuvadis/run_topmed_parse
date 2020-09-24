@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -N Dosage_22
+#PBS -l nodes=1:ppn=1
+#PBS -o /home/chris/logs/${PBS_JOBNAME}.o${PBS_JOBID}.log
+#PBS -e /home/chris/logs/${PBS_JOBNAME}.e${PBS_JOBID}.err
+#PBS -l walltime=150:00:00
+#PBS -l mem=16gb
+
+python /home/chris/geuvadis/scripts/topmed.py \
+-i /home/chris/geuvadis/ALL/vcf/ \
+-c 1 \
+-p ALL \
+--cpos \
+-o /home/chris/geuvadis/ALL/

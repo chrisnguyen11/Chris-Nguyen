@@ -1,0 +1,15 @@
+#!/bin/bash
+for pop in ALL
+do
+	echo "$pop"
+	for chr in 1
+	do
+		echo "$chr"
+		python2 /home/chris/geuvadis/scripts/topmed.py \
+		-i /home/chris/geuvadis/"$pop"/vcf/orginal_vcf/ \
+		-c "$chr" \
+		-p "$pop" \
+		--cpos \
+		-o /home/chris/geuvadis/"$pop"/
+	done
+done

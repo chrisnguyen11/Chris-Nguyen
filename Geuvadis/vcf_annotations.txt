@@ -1,0 +1,10 @@
+#!/bin/bash
+for pop in ALL
+do
+	echo "$pop"
+	for i in 7
+	do
+		echo "$i"
+		head -n 19 ALL.chr"$i".shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf > "$pop".chr"$i".hg38.vcf
+	done
+done

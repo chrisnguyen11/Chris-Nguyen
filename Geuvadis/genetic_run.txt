@@ -1,0 +1,3 @@
+#!/bin/bash
+
+Rscript genetic_pi1_cross_tissue.R

@@ -1,0 +1,8 @@
+#!/bin/bash
+for pop in ALL
+do 
+	for chr in {18..22}
+	do
+		qsub -v pop=${pop},chr=${chr} /home/chris/geuvadis/scripts/run_topmed_parse
+	done
+done
